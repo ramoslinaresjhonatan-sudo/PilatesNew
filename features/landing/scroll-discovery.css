@@ -1,0 +1,34 @@
+.discovery { position:relative; margin-inline:calc(-1 * clamp(1.25rem,6vw,6rem)); background:var(--color-cocoa); color:var(--color-white); }
+.discovery__stage { position:relative; }
+.discovery__scene { position:relative; min-height:70svh; padding:clamp(.75rem, 1.5vw, 1.25rem); overflow:hidden; isolation:isolate; }
+.discovery__scene img, .discovery__shade {
+  position:absolute;
+  inset:clamp(.75rem, 1.5vw, 1.25rem);
+  width:calc(100% - clamp(1.5rem, 3vw, 2.5rem));
+  height:calc(100% - clamp(1.5rem, 3vw, 2.5rem));
+  border-radius:clamp(1rem, 1.8vw, 1.75rem);
+}
+.discovery__scene img { object-fit:cover; overflow:hidden; }
+.discovery__shade { background:linear-gradient(0deg, color-mix(in srgb, var(--color-cocoa) 82%, transparent), transparent 75%); }
+.discovery__copy { position:absolute; left:clamp(1.5rem,7vw,8rem); right:1.5rem; bottom:clamp(3rem,9svh,7rem); max-width:34rem; opacity:var(--copy-opacity,1); transform:translateY(var(--copy-y,0)); }
+.discovery__chapter { font-size:.65rem; letter-spacing:.2em; font-weight:600; }
+.discovery__copy h3 { margin:.65rem 0 1rem; color:inherit; font-family:var(--font-display); text-transform:var(--font-display-case); font-size:clamp(2rem,4.5vw,4.5rem); font-weight:600; line-height:1.15; letter-spacing:-.045em; }
+.discovery__copy p { margin:0; max-width:28rem; font-family:var(--font-display); text-transform:var(--font-display-case); font-weight:400; font-size:clamp(1.1rem,1.7vw,1.5rem); line-height:1.5; text-wrap:pretty; }
+
+
+.discovery__scene { height:calc(100svh - var(--header-height)); min-height:0; }
+.discovery__copy { left:clamp(1.5rem,7vw,8rem); right:1.5rem; bottom:clamp(2rem,6svh,5rem); }
+.discovery__copy h3, .discovery__copy p { position:relative; }
+.discovery__reserve { visibility:hidden; }
+.discovery__typed { position:absolute; inset:0; }
+.discovery__chapter { font-family:var(--font-display); text-transform:var(--font-display-case); }
+.discovery__scene > .resilient-image-placeholder { position:absolute; inset:clamp(.75rem, 1.5vw, 1.25rem); border-radius:clamp(1rem, 1.8vw, 1.75rem); }
+@media (max-width:768px) {
+  .discovery__scene { height:auto; }
+  .discovery__scene img { position:relative; inset:auto; display:block; width:100%; height:auto; object-fit:contain; }
+  .discovery__scene > .resilient-image-placeholder { position:relative; inset:auto; min-height:14rem; }
+  .discovery__shade { display:none; }
+  .discovery__copy { position:relative; inset:auto; max-width:none; padding:2rem 1.5rem; }
+  .discovery__copy h3 { font-size:clamp(1.5rem,6vw,2.5rem); }
+  .discovery__copy p { font-size:clamp(.85rem,3.5vw,1.15rem); }
+}

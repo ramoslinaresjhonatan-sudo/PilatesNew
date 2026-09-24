@@ -1,0 +1,191 @@
+/* Segunda pantalla de Experiencia: recovery como parte del ritual, no un extra. */
+
+.landing-page .recovery-ritual {
+  padding: clamp(1.5rem, 2vw, 2rem) clamp(.75rem, 1vw, 1rem) 2.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.landing-page .recovery-ritual__intro {
+  width: min(100%, 88rem);
+  margin: 0 auto 1.25rem;
+  text-align: center;
+}
+
+.landing-page .recovery-ritual__eyebrow {
+  margin: 0 0 .7rem;
+  color: var(--landing-rose);
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+.landing-page .recovery-ritual h1 {
+  margin: 0;
+  color: var(--landing-ink);
+  font-family: var(--font-display); text-transform:var(--font-display-case);
+  font-size: clamp(2rem, 3.6vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.05;
+}
+
+.landing-page .recovery-ritual__copy {
+  max-width: 65rem;
+  margin: 1rem auto 0;
+  color: var(--landing-muted);
+  font-size: clamp(.92rem, 1.15vw, 1.02rem);
+  line-height: 1.6;
+}
+
+/* Dos fotos grandes, mismo tamaño: ninguna pesa mas que la otra en la grilla. */
+.landing-page .recovery-ritual__gallery {
+  display: grid;
+  width: min(100%, var(--landing-content-width));
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1.82fr) minmax(0, 1fr);
+  gap: .65rem;
+}
+
+.landing-page .recovery-ritual__card {
+  position: relative;
+  display: block;
+  min-height: clamp(28rem, 36vw, 38rem);
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--landing-champagne);
+  color: inherit;
+  text-decoration: none;
+}
+
+.landing-page .recovery-ritual__card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 550ms cubic-bezier(.22, .61, .36, 1);
+}
+
+.landing-page .recovery-ritual__card:hover > img,
+.landing-page .recovery-ritual__card:focus-visible > img {
+  transform: scale(1.045);
+}
+
+/* Sombra de abajo hacia arriba: el texto se lee sobre cualquier foto. */
+.landing-page .recovery-ritual__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, color-mix(in srgb, var(--color-cocoa) 68%, transparent) 0%, color-mix(in srgb, var(--color-cocoa) 12%, transparent) 46%, transparent 68%);
+  transition: background-color 450ms ease;
+}
+
+.landing-page .recovery-ritual__card:hover .recovery-ritual__scrim,
+.landing-page .recovery-ritual__card:focus-visible .recovery-ritual__scrim {
+  background: linear-gradient(0deg, color-mix(in srgb, var(--color-cocoa) 76%, transparent) 0%, color-mix(in srgb, var(--color-cocoa) 18%, transparent) 46%, transparent 68%);
+}
+
+.landing-page .recovery-ritual__panel {
+  position: absolute;
+  z-index: 1;
+  right: clamp(1.25rem, 2.5vw, 2rem);
+  bottom: clamp(1.25rem, 2.5vw, 2rem);
+  left: clamp(1.25rem, 2.5vw, 2rem);
+  color: var(--landing-ivory);
+}
+
+.landing-page .recovery-ritual__kicker {
+  margin: 0 0 .3rem;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.landing-page .recovery-ritual__panel h3 {
+  margin: 0;
+  font-family: var(--font-display); text-transform:var(--font-display-case);
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+.landing-page .recovery-ritual__lead {
+  margin: .3rem 0 0;
+  font-family: var(--font-editorial); text-transform:var(--font-display-case);
+  font-size: clamp(1.2rem, 1.9vw, 2rem);
+  font-style: italic;
+}
+
+.landing-page .recovery-ritual__body {
+  max-width: 22rem;
+  margin: .55rem 0 0;
+  font-size: .82rem;
+  line-height: 1.55;
+  opacity: .88;
+}
+
+/* Cierre: los tres pilares entre dos lineas, igual criterio que en Experiencia. */
+.landing-page .recovery-ritual__pillars {
+  display: flex;
+  width: min(100%, var(--landing-content-width));
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: clamp(2rem, 4vw, 3rem) auto 0;
+  gap: .55rem 1.1rem;
+  color: var(--landing-taupe);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.landing-page .recovery-ritual__pillars::before,
+.landing-page .recovery-ritual__pillars::after {
+  flex: 1 1 4rem;
+  height: 1px;
+  background: var(--landing-border);
+  content: '';
+}
+
+.landing-page .recovery-ritual__pillars span + span::before {
+  margin-right: 1.1rem;
+  content: '·';
+}
+
+@media (max-width: 700px) {
+  .landing-page .recovery-ritual__pillars::before,
+  .landing-page .recovery-ritual__pillars::after {
+    display: none;
+  }
+
+  .landing-page .recovery-ritual__pillars span + span::before {
+    content: none;
+  }
+}
+
+@media (max-width: 780px) {
+  .landing-page .recovery-ritual__gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .landing-page .recovery-ritual__card {
+    min-height: 25rem;
+    aspect-ratio: 1.1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-page .recovery-ritual__card > img,
+  .landing-page .recovery-ritual__scrim {
+    transition: none;
+  }
+
+  .landing-page .recovery-ritual__card:hover img,
+  .landing-page .recovery-ritual__card:focus-visible img {
+    transform: none;
+  }
+}

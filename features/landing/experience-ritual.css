@@ -1,0 +1,286 @@
+/* Primera pantalla de Experiencia: una sola foto grande y el ritual al costado. */
+
+.landing-page .experience-ritual {
+  padding: clamp(2.5rem, 5vw, 4.5rem) var(--landing-gutter) clamp(2.5rem, 5vw, 4rem);
+  scroll-margin-top: 5rem;
+}
+
+.landing-page .experience-ritual__inner {
+  display: grid;
+  width: min(100%, var(--landing-content-width));
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 2.25fr) minmax(13rem, .56fr);
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.landing-page .experience-ritual__lead {
+  min-width: 0;
+}
+
+.landing-page .experience-ritual__eyebrow {
+  margin: 0 0 .6rem;
+  color: var(--landing-rose);
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.landing-page .experience-ritual h1 {
+  margin: 0;
+  color: var(--landing-ink);
+  font-family: var(--font-display); text-transform:var(--font-display-case);
+  font-size: clamp(2.75rem, 6.5vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -.055em;
+  line-height: .94;
+  white-space: nowrap;
+}
+
+.landing-page .experience-ritual__copy {
+  max-width: 40rem;
+  margin: 1rem 0 0;
+  color: var(--landing-muted);
+  font-size: clamp(.95rem, 1.25vw, 1.12rem);
+  line-height: 1.6;
+}
+
+.landing-page .experience-ritual__action {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.6rem;
+  padding-inline: clamp(1.5rem, 3vw, 2.6rem);
+  border-radius: 999px;
+  color: var(--landing-ivory);
+  background: var(--landing-rose);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 320ms var(--landing-ease), transform 320ms var(--landing-ease);
+}
+
+.landing-page a.experience-ritual__action:hover {
+  background: var(--landing-rose-action);
+  transform: translateY(-1px);
+}
+
+/* Proporcion fija: la foto se recorta, el bloque no cambia de alto. */
+.landing-page .experience-ritual__cover {
+  position: relative;
+  margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+  aspect-ratio: 2.15;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--landing-champagne);
+}
+
+.landing-page .experience-ritual__carousel-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  animation: experience-carousel-in 480ms ease both;
+}
+
+.landing-page .experience-ritual__cover-empty { display: grid; width: 100%; height: 100%; padding: 1.5rem; color: var(--landing-muted); place-items: center; text-align: center; }
+@keyframes experience-carousel-in { from { opacity: .25; transform: scale(1.015); } to { opacity: 1; transform: scale(1); } }
+
+.landing-page .experience-ritual__cover figcaption {
+  position: absolute;
+  z-index: 1;
+  bottom: clamp(.9rem, 1.8vw, 1.5rem);
+  left: clamp(.9rem, 1.8vw, 1.5rem);
+  display: grid;
+  max-width: calc(100% - 2rem);
+  padding: .6rem .95rem;
+  border: 1px solid color-mix(in srgb, var(--color-white) 45%, transparent);
+  border-radius: 10px;
+  gap: .15rem;
+  background: color-mix(in srgb, var(--color-cocoa) 34%, transparent);
+  color: var(--landing-ivory);
+  backdrop-filter: blur(9px);
+}
+
+.landing-page .experience-ritual__cover figcaption span {
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.landing-page .experience-ritual__cover figcaption em {
+  font-family: var(--font-editorial); text-transform:var(--font-display-case);
+  font-size: clamp(.95rem, 1.4vw, 1.15rem);
+  font-style: italic;
+}
+
+/* Columna del ritual, separada por una linea fina. */
+.landing-page .experience-ritual__aside {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding-left: clamp(.85rem, 1.5vw, 1.5rem);
+  border-left: 1px solid var(--landing-border);
+}
+
+.landing-page .experience-ritual__steps {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.landing-page .experience-ritual__steps li {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(.7rem, 1.45vw, 1.15rem);
+  border-bottom: 1px solid var(--landing-border);
+}
+
+.landing-page .experience-ritual__steps li:first-child {
+  padding-top: 0;
+}
+
+.landing-page .experience-ritual__step-name {
+  display: flex;
+  margin: 0;
+  align-items: baseline;
+  gap: .6rem;
+  color: var(--landing-rose);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.landing-page .experience-ritual__step-name span {
+  color: var(--landing-sand);
+  font-family: var(--font-display); text-transform:var(--font-display-case);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.landing-page .experience-ritual__step-name span::after {
+  margin-left: .6rem;
+  content: '·';
+}
+
+.landing-page .experience-ritual__step-text {
+  margin: .5rem 0 0;
+  color: var(--landing-ink);
+  font-family: var(--font-display); text-transform:var(--font-display-case);
+  font-size: clamp(.92rem, 1.1vw, 1.08rem);
+  font-weight: 600;
+  letter-spacing: -.025em;
+  line-height: 1.3;
+}
+
+.landing-page .experience-ritual__more {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 1.4rem;
+  gap: .7rem;
+  color: var(--landing-rose);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.landing-page a.experience-ritual__more:hover .landing-arrow {
+  transform: translateX(3px);
+}
+
+/* Cierre: los cuatro pilares entre dos lineas. */
+.landing-page .experience-ritual__pillars {
+  display: flex;
+  width: min(100%, var(--landing-content-width));
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: clamp(2rem, 4vw, 3.5rem) auto 0;
+  gap: .55rem 1.1rem;
+  color: var(--landing-taupe);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.landing-page .experience-ritual__pillars::before,
+.landing-page .experience-ritual__pillars::after {
+  flex: 1 1 4rem;
+  height: 1px;
+  background: var(--landing-border);
+  content: '';
+}
+
+.landing-page .experience-ritual__pillars span + span::before {
+  margin-right: 1.1rem;
+  content: '·';
+}
+
+@media (max-width: 900px) {
+  .landing-page .experience-ritual__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .landing-page .experience-ritual__cover {
+    aspect-ratio: 1.75;
+  }
+
+  .landing-page .experience-ritual__aside {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--landing-border);
+    padding-top: clamp(1.25rem, 4vw, 2rem);
+  }
+}
+
+/* En pantallas angostas las lineas y los puntos dejaban un '·' colgando al
+   cortarse el renglon: quedan solo las cuatro palabras, centradas. */
+@media (max-width: 700px) {
+  .landing-page .experience-ritual__pillars::before,
+  .landing-page .experience-ritual__pillars::after {
+    display: none;
+  }
+
+  .landing-page .experience-ritual__pillars span + span::before {
+    content: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .landing-page .experience-ritual h1 { white-space: normal; }
+
+  .landing-page .experience-ritual__cover {
+    aspect-ratio: 1.35;
+  }
+
+  .landing-page .experience-ritual__action {
+    width: 100%;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-page .experience-ritual__action,
+  .landing-page .experience-ritual__more .landing-arrow {
+    transition: none;
+  }
+}

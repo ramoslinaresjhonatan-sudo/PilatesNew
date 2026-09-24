@@ -1,0 +1,134 @@
+/* Pilates House: single source of truth. Palette from the brand manual.
+ * Brand type system:
+ * - Agrandir: primary interface font (body, nav, buttons, forms).
+ * - Gatwick: large headlines and cover/hero titles only.
+ * - Sifonn: featured numeric data — schedule times, prices, stats.
+ * - Sloop Script Pro: decorative/emotional accents only. Never in buttons,
+ *   navbar, schedules, forms or long text — it hurts readability there.
+ * Bundled fallbacks (Montserrat/Syne/Pinyon Script) keep the stack usable
+ * if a licensed file is ever missing.
+ */
+@font-face { font-family: 'Gatwick'; src: url('/fonts/gatwick-ultralight.otf') format('opentype'); font-style: normal; font-weight: 100 500; font-display: swap; }
+@font-face { font-family: 'Gatwick'; src: url('/fonts/gatwick-bold.otf') format('opentype'); font-style: normal; font-weight: 600 900; font-display: swap; }
+@font-face { font-family: 'Agrandir'; src: url('/fonts/agrandir-thinitalic.otf') format('opentype'); font-style: italic; font-weight: 100 500; font-display: swap; }
+@font-face { font-family: 'Agrandir'; src: url('/fonts/agrandir-regular.otf') format('opentype'); font-style: normal; font-weight: 100 500; font-display: swap; }
+@font-face { font-family: 'Agrandir'; src: url('/fonts/agrandir-textbold.otf') format('opentype'); font-style: normal; font-weight: 600 799; font-display: swap; }
+@font-face { font-family: 'Agrandir'; src: url('/fonts/agrandir-grandheavy.otf') format('opentype'); font-style: normal; font-weight: 800 900; font-display: swap; }
+@font-face { font-family: 'Sifonn'; src: url('/fonts/sifonn-pro.otf') format('opentype'); font-style: normal; font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Sloop Script Pro'; src: url('/fonts/sloop-script-pro.ttf') format('truetype'); font-style: normal; font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/fonts/montserrat-variable.ttf') format('truetype'); font-style: normal; font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Syne'; src: url('/fonts/syne-variable.ttf') format('truetype'); font-style: normal; font-weight: 400 800; font-display: swap; }
+@font-face { font-family: 'Pinyon Script'; src: url('/fonts/pinyon-script-regular.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+
+:root {
+  --color-cocoa: #523A28;
+  --color-white: #FFFFFF;
+  --color-peach: #F1D1B8;
+  --color-gold: #BE9E6F;
+  --color-taupe: #927055;
+  /* Derived surfaces and readable secondary text. */
+  --surface: color-mix(in srgb, var(--color-peach) 18%, var(--color-white));
+  --surface-deep: color-mix(in srgb, var(--color-peach) 45%, var(--color-white));
+  --text-muted: color-mix(in srgb, var(--color-cocoa) 70%, var(--color-taupe));
+  --border-subtle: color-mix(in srgb, var(--color-cocoa) 16%, transparent);
+  /* Functional states are distinct from the brand palette. */
+  --status-success: #2E714A;
+  --status-danger: #B43C3C;
+  --status-warning: #81591E;
+  --status-info: #34618A;
+  --status-success-soft: color-mix(in srgb, var(--status-success) 12%, var(--color-white));
+  --status-danger-soft: color-mix(in srgb, var(--status-danger) 10%, var(--color-white));
+  --status-warning-soft: color-mix(in srgb, var(--color-gold) 24%, var(--color-white));
+  --status-info-soft: color-mix(in srgb, var(--status-info) 12%, var(--color-white));
+  --font-body: 'Agrandir', 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Gatwick', 'Syne', 'Montserrat', sans-serif;
+  --font-display-case: uppercase;
+  --font-number: 'Sifonn', 'Montserrat', sans-serif;
+  --font-label: var(--font-body);
+  --font-script: 'Sloop Script Pro', 'Pinyon Script', cursive;
+  --font-button: var(--font-body);
+  --font-subtitle-decorative: var(--font-script);
+  /* Stat/price/time displays share the numeric type; headline-style uses of
+     the old "editorial" role live under --font-display instead (see the
+     per-selector overrides below and in each page's CSS). */
+  --font-editorial: var(--font-number);
+  --font-script-display: var(--font-script);
+  --font-script-accent: var(--font-script);
+  /* Compatibility aliases: all sections share the same theme. */
+  --carbon: var(--color-cocoa);
+  --ink: var(--color-cocoa);
+  --peach: var(--color-peach);
+  --cream: var(--surface);
+  --cream-deep: var(--surface-deep);
+  --white: var(--color-white);
+  --muted: var(--text-muted);
+  --success: var(--status-success);
+  --danger: var(--status-danger);
+  --border: var(--border-subtle);
+  --brand-carbon: var(--color-cocoa);
+  --brand-peach: var(--color-peach);
+  --brand-cream: var(--surface);
+  --brand-cream-deep: var(--surface-deep);
+  --brand-white: var(--color-white);
+  --landing-ivory: var(--surface);
+  --landing-cream: var(--surface-deep);
+  --landing-champagne: var(--color-peach);
+  --landing-beige: var(--color-peach);
+  --landing-sand: var(--color-gold);
+  --landing-blush: var(--color-peach);
+  --landing-dusty-pink: var(--color-gold);
+  --landing-rose: var(--color-taupe);
+  --landing-rose-action: var(--color-cocoa);
+  --landing-taupe: var(--color-taupe);
+  --landing-cocoa: var(--color-cocoa);
+  --landing-ink: var(--color-cocoa);
+  --landing-muted: var(--text-muted);
+  --landing-border: var(--border-subtle);
+  --landing-serif: var(--font-display);
+  --panel-paper: var(--surface);
+  --panel-ink: var(--color-cocoa);
+  --panel-accent: var(--color-cocoa);
+  --panel-line: var(--border-subtle);
+  --panel-muted: var(--text-muted);
+  --panel-surface-soft: var(--surface-deep);
+}
+
+.eyebrow, .section-eyebrow, .landing-eyebrow { font-family: var(--font-body); }
+
+/* Quotes and editorial captions read as headline type, not numeric data. */
+.founder-story blockquote, .gallery-intro p, .auth-visual blockquote,
+.client-welcome h1 em, .experience-ritual__cover figcaption em,
+.schedule-ritual__tagline-script, .client-plans-modal > header h2 {
+  font-family: var(--font-display) !important;
+}
+
+/* This price lives on the --landing-serif alias; keep it on the numeric role. */
+.boutique-plan__price strong { font-family: var(--font-number) !important; }
+
+/* Shared interaction typography; override section-specific font shorthands. */
+:is(button, [role='button'], input[type='button'], input[type='submit'], input[type='reset'], summary),
+a:is(.button, .nav-cta, .booking-button, .landing-action, .reference-community-button,
+  [class*='__button'], [class*='__action'], [class*='__cta'], [class*='__reserve'],
+  [class*='__discover']) {
+  font-family: var(--font-button) !important;
+}
+
+/* Only editorial subtitles; functional headings and form labels keep body type. */
+.landing-page :is(.activity-story__subtitle,
+  .experience-card__subtitle, .membership-grid__subtitle, .recovery-ritual__lead,
+  .beyond-ritual__lead) {
+  font-family: var(--font-subtitle-decorative) !important;
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem) !important;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+/* The homepage hero uses display typography, not decorative script. */
+.landing-page :is(.landing-hero__subtitle, .landing-hero__motto, .community-hero__lead) {
+  font-family: var(--font-display) !important;
+  text-transform: var(--font-display-case);
+  font-style: normal;
+}

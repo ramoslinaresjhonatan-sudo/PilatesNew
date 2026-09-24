@@ -1,0 +1,29 @@
+/* Recepción reutiliza el mismo lienzo que Cliente (clase .client-house,
+   agregada junto con .reception-house en components/panel-shell.tsx), así
+   la vista de inicio es idéntica: mismo header, misma tarjeta, mismo menú
+   (.client-panel / .client-section-heading / .client-home-menu en
+   app/client-house.css). Este archivo queda disponible por si en el futuro
+   se necesita algún ajuste exclusivo de recepción. */
+
+/* client-house.css pone color:#FFFFFF en .main-layout para el texto que va
+   sobre el lienzo cocoa del cliente. Recepción además navega a los módulos
+   de gestión (Clientes, Pagos, Agenda...), que son tarjetas claras sin ese
+   contraste pensado: se restaura la tinta oscura habitual de esas pantallas
+   para que el texto no quede blanco sobre fondo claro. */
+.main-layout.reception-house { color: var(--panel-ink); }
+
+/* Agenda (y Personal/Roles, si algún día se habilitan) usan el layout "abierto":
+   sin tarjeta propia, el texto queda directamente sobre el lienzo del
+   .main-layout. Ese lienzo es el cocoa del cliente (por .client-house), pero
+   estas pantallas reutilizan los componentes de administración pensados para
+   un fondo claro (mismo estilo que Clientes/Membresías/Pagos): sin este
+   override el título "Agenda semanal" queda en tinta oscura sobre fondo
+   oscuro, invisible. Se restaura el fondo claro habitual solo en estas
+   pantallas; el inicio de recepción no lleva la clase main-layout--open-module
+   y conserva el lienzo cocoa cálido intacto. */
+.main-layout.reception-house.main-layout--open-module {
+  background: var(--cream);
+}
+.main-layout.reception-house.main-layout--open-module::before {
+  display: none;
+}

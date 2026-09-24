@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Reemplazar por foto real de The Spa">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2e5d5"/>
+      <stop offset="100%" stop-color="#dfc1a0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#fbf5ed" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#fbf5ed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg2)"/>
+  <rect width="1600" height="1200" fill="url(#glow)"/>
+  <g fill="none" stroke="#6c4c38" stroke-opacity=".2" stroke-width="2">
+    <path d="M0 860 C 300 800, 500 920, 800 860 S 1300 800, 1600 860"/>
+    <path d="M0 940 C 300 880, 500 1000, 800 940 S 1300 880, 1600 940"/>
+    <path d="M0 1020 C 300 960, 500 1080, 800 1020 S 1300 960, 1600 1020"/>
+  </g>
+</svg>

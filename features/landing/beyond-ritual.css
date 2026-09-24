@@ -1,0 +1,230 @@
+/* Pantalla de Beyond the Mat: los amenities del estudio, tres fotos iguales. */
+
+.landing-page .beyond-ritual {
+  padding: clamp(2.5rem, 5vw, 4.5rem) var(--landing-gutter) clamp(2.5rem, 5vw, 4rem);
+  scroll-margin-top: 5rem;
+}
+
+.landing-page .beyond-ritual__intro {
+  position: relative;
+  width: min(100%, 88rem);
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.landing-page .beyond-ritual__eyebrow {
+  margin: 0 0 .7rem;
+  color: var(--landing-rose);
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+.landing-page .beyond-ritual h1 {
+  margin: 0;
+  color: var(--landing-ink);
+  font-family: var(--font-display); text-transform:var(--font-display-case);
+  font-size: clamp(2rem, 3.6vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.05;
+}
+
+.landing-page .beyond-ritual__copy {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  color: var(--landing-muted);
+  font-size: clamp(.92rem, 1.15vw, 1.02rem);
+  line-height: 1.6;
+}
+
+/* El link de "Discover the house" flota a la derecha, alineado con la copy. */
+.landing-page .beyond-ritual__discover {
+  position: absolute;
+  top: .35rem;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: var(--landing-taupe);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 260ms ease;
+}
+
+.landing-page .beyond-ritual__discover span {
+  transition: transform 320ms var(--landing-ease);
+}
+
+.landing-page a.beyond-ritual__discover:hover {
+  color: var(--landing-rose-action);
+}
+
+.landing-page a.beyond-ritual__discover:hover span {
+  transform: translateX(3px);
+}
+
+/* Tres fotos iguales: ningun amenity pesa mas que otro en la grilla. */
+.landing-page .beyond-ritual__gallery {
+  display: grid;
+  width: min(100%, var(--landing-content-width));
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem;
+}
+
+.landing-page .beyond-ritual__card {
+  position: relative;
+  min-height: clamp(26rem, 34vw, 34rem);
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--landing-champagne);
+}
+
+.landing-page .beyond-ritual__card img {
+  object-fit: cover;
+}
+
+/* Sombra de abajo hacia arriba: el texto se lee sobre cualquier foto. */
+.landing-page .beyond-ritual__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, color-mix(in srgb, var(--color-cocoa) 70%, transparent) 0%, color-mix(in srgb, var(--color-cocoa) 14%, transparent) 46%, transparent 68%);
+}
+
+.landing-page .beyond-ritual__panel {
+  position: absolute;
+  z-index: 1;
+  right: clamp(3.25rem, 5vw, 4rem);
+  bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+  left: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--landing-ivory);
+}
+
+.landing-page .beyond-ritual__kicker {
+  margin: 0 0 .3rem;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.landing-page .beyond-ritual__panel h3 {
+  margin: 0;
+  font-family: var(--font-display); text-transform:var(--font-display-case);
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+
+.landing-page .beyond-ritual__lead {
+  margin: .3rem 0 0;
+  font-family: var(--font-editorial); text-transform:var(--font-display-case);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-style: italic;
+}
+
+.landing-page .beyond-ritual__body {
+  margin: .55rem 0 0;
+  font-size: .78rem;
+  line-height: 1.55;
+  opacity: .88;
+}
+
+/* Boton circular con flecha, flotando en la esquina inferior de cada foto. */
+.landing-page .beyond-ritual__cta {
+  position: absolute;
+  z-index: 1;
+  right: clamp(1.25rem, 2.5vw, 1.75rem);
+  bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid color-mix(in srgb, var(--color-white) 55%, transparent);
+  border-radius: 50%;
+  color: var(--landing-ivory);
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: background-color 260ms ease, border-color 260ms ease, transform 260ms ease;
+}
+
+.landing-page a.beyond-ritual__cta:hover {
+  border-color: color-mix(in srgb, var(--color-white) 85%, transparent);
+  background: color-mix(in srgb, var(--color-white) 12%, transparent);
+  transform: translateY(-2px);
+}
+
+/* Cierre: los cuatro pilares entre dos lineas, igual criterio que en Recovery. */
+.landing-page .beyond-ritual__pillars {
+  display: flex;
+  width: min(100%, var(--landing-content-width));
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: clamp(2rem, 4vw, 3rem) auto 0;
+  gap: .55rem 1.1rem;
+  color: var(--landing-taupe);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.landing-page .beyond-ritual__pillars::before,
+.landing-page .beyond-ritual__pillars::after {
+  flex: 1 1 4rem;
+  height: 1px;
+  background: var(--landing-border);
+  content: '';
+}
+
+.landing-page .beyond-ritual__pillars span + span::before {
+  margin-right: 1.1rem;
+  content: '·';
+}
+
+@media (max-width: 900px) {
+  .landing-page .beyond-ritual__discover {
+    position: static;
+    justify-content: center;
+    margin-top: 1.4rem;
+  }
+
+  .landing-page .beyond-ritual__gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .landing-page .beyond-ritual__card {
+    min-height: 22rem;
+  }
+
+  .landing-page .beyond-ritual__panel {
+    right: clamp(4.25rem, 12vw, 5rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .landing-page .beyond-ritual__pillars::before,
+  .landing-page .beyond-ritual__pillars::after {
+    display: none;
+  }
+
+  .landing-page .beyond-ritual__pillars span + span::before {
+    content: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-page .beyond-ritual__discover span,
+  .landing-page .beyond-ritual__cta {
+    transition: none;
+  }
+}
